@@ -1,0 +1,373 @@
+/*!* Reset *!*/
+/*#root{*/
+/*    position: relative;*/
+/*    z-index: 1; !* Make sure it's above the gradient *!*/
+/*    background: transparent; !* Important *!*/
+/*}*/
+
+
+/** {*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*    box-sizing: border-box;*/
+/*    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;*/
+/*}*/
+
+/*body, html {*/
+/*    height: 100%;*/
+/*    width: 100%;*/
+/*    overflow: hidden;*/
+/*}*/
+
+/*!* Main container *!*/
+/*.portfolio-container {*/
+/*    display: grid;*/
+/*    grid-template-columns: 320px 1fr; !* Sidebar 320px *!*/
+/*    min-height: 100vh;*/
+/*    width: 100%;*/
+/*    transition: background-color 0.3s, color 0.3s;*/
+/*}*/
+
+/*!* Sidebar *!*/
+/*.sidebar {*/
+/*    padding: 100px 10px 20px 200px; !* Push list to the right *!*/
+/*    overflow-y: auto;*/
+/*    height: 100vh;*/
+/*    width: 50vh; !* sidebar width *!*/
+/*    scrollbar-width: none;*/
+/*    -ms-overflow-style: none;*/
+/*}*/
+
+/*!* Scrollbar for Chrome *!*/
+/*.sidebar::-webkit-scrollbar {*/
+/*    display: none;*/
+/*}*/
+
+/*.sidebar::-webkit-scrollbar-thumb {*/
+/*    background: rgba(0, 0, 0, 0.3);*/
+/*    border-radius: 10px;*/
+/*}*/
+
+/*.project-list {*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    gap: 10px;*/
+/*    padding-left: 150px; !* spacing without year *!*/
+/*}*/
+
+/*!* List item *!*/
+/*.project-item {*/
+/*    display: flex;*/
+/*    justify-content: space-between;*/
+/*    align-items: center;*/
+/*    padding: 12px 15px; !* vertical and horizontal spacing *!*/
+/*    border-radius: 12px;*/
+/*    cursor: pointer;*/
+/*    transition: all 0.3s ease;*/
+/*    position: relative;*/
+/*}*/
+
+/*!* Hover and selected effect *!*/
+/*.project-item:hover,*/
+/*.project-item.active {*/
+/*    background: rgba(0, 0, 0, 0.01); !* Light gray background *!*/
+/*    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);*/
+/*    transform: translateX(5px);*/
+/*}*/
+
+/*.project-name {*/
+/*    font-size: 16px;*/
+/*    font-weight: 450;*/
+/*}*/
+
+/*.project-year {*/
+/*    font-size: 16px;*/
+/*    opacity: 0.6;*/
+/*}*/
+
+/*!* Content area *!*/
+/*.content-area {*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    width: 100%;*/
+/*    height: 100vh;*/
+/*    padding: 40px;*/
+/*    box-sizing: border-box;*/
+/*    text-align: center;*/
+/*}*/
+
+/*.about-content {*/
+/*    max-width: 600px;*/
+/*    width: 100%;*/
+/*}*/
+
+/*.name-title {*/
+/*    font-size: clamp(32px, 4vw, 42px);*/
+/*    font-weight: 700;*/
+/*    text-align: left;*/
+/*    margin-bottom: 8px;*/
+/*}*/
+
+/*.job-title {*/
+/*    font-size: clamp(18px, 2vw, 24px);*/
+/*    text-align: left;*/
+/*    opacity: 0.7;*/
+/*    margin-bottom: 20px;*/
+/*}*/
+
+/*.nav-links {*/
+/*    display: flex;*/
+/*    text-align: left;*/
+/*    gap: 20px;*/
+/*    justify-content: left;*/
+/*    flex-wrap: wrap;*/
+/*}*/
+
+/*.nav-link {*/
+/*    text-decoration: none;*/
+/*    text-align: left;*/
+/*    color: inherit;*/
+/*    opacity: 0.7;*/
+/*    font-size: 16px;*/
+/*    transition: opacity 0.3s;*/
+/*}*/
+
+/*.nav-link:first-child {*/
+/*    opacity: 1;*/
+/*}*/
+
+/*.nav-link:hover {*/
+/*    opacity: 1;*/
+/*    text-decoration: underline;*/
+/*}*/
+
+/*!* Project popup *!*/
+/*.project-popup {*/
+/*    position: fixed;*/
+/*    top: 50%;*/
+/*    left: 60%;*/
+/*    transform: translate(-50%, -50%) scale(0.95);*/
+/*    width: 80%;*/
+/*    max-width: 800px;*/
+/*    height: 80vh;*/
+/*    background-color: white;*/
+/*    border-radius: 16px;*/
+/*    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);*/
+/*    z-index: 1000;*/
+/*    overflow: hidden;*/
+/*    opacity: 0;*/
+/*    visibility: hidden;*/
+/*    transition: all 0.3s ease;*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    pointer-events: none; !* Initially no pointer events *!*/
+/*}*/
+
+/*.project-popup.active {*/
+/*    opacity: 1;*/
+/*    visibility: visible;*/
+/*    transform: translate(-50%, -50%) scale(1);*/
+/*    pointer-events: auto; !* Enable pointer events when active *!*/
+/*}*/
+
+/*.project-popup-header {*/
+/*    padding: 20px 30px;*/
+/*    border-bottom: 1px solid rgba(0, 0, 0, 0.1);*/
+/*    display: flex;*/
+/*    justify-content: space-between;*/
+/*    align-items: center;*/
+/*}*/
+
+/*.project-title {*/
+/*    font-size: 24px;*/
+/*    font-weight: 600;*/
+/*    margin: 0;*/
+/*}*/
+
+/*.close-popup {*/
+/*    !*background: none;*!*/
+/*    border: none;*/
+/*    width: 32px;*/
+/*    height: 32px;*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    justify-content: center;*/
+/*    border-radius: 50%;*/
+/*    cursor: pointer;*/
+/*    transition: background-color 0.2s;*/
+/*    color: red;*/
+
+/*}*/
+
+/*.close-popup:hover {*/
+/*    background-color: rgba(0, 0, 0, 0.05);*/
+/*}*/
+
+/*.pin-indicator {*/
+/*    font-size: 14px;*/
+/*    color: #888;*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*}*/
+
+/*.project-popup-content {*/
+/*    flex: 1;*/
+/*    padding: 30px;*/
+/*    overflow-y: auto;*/
+/*}*/
+
+/*.project-description {*/
+/*    font-size: 16px;*/
+/*    line-height: 1.6;*/
+/*    color: #333;*/
+/*}*/
+
+/*.project-popup-footer {*/
+/*    padding: 15px 30px;*/
+/*    border-top: 1px solid rgba(0, 0, 0, 0.1);*/
+/*    display: flex;*/
+/*    justify-content: space-between;*/
+/*    align-items: center;*/
+/*}*/
+
+/*.project-year-tag {*/
+/*    font-size: 14px;*/
+/*    color: #666;*/
+/*}*/
+
+/*.project-links {*/
+/*    display: flex;*/
+/*    gap: 15px;*/
+/*}*/
+
+/*.project-link {*/
+/*    padding: 6px 12px;*/
+/*    background-color: #f5f5f7;*/
+/*    border-radius: 6px;*/
+/*    text-decoration: none;*/
+/*    color: #333;*/
+/*    font-size: 14px;*/
+/*    transition: background-color 0.2s;*/
+/*}*/
+
+/*.project-link:hover {*/
+/*    background-color: #e5e5e7;*/
+/*}*/
+
+/*!* Overlay for popup background *!*/
+/*.popup-overlay {*/
+/*    position: fixed;*/
+/*    top: 0;*/
+/*    left: 0;*/
+/*    width: 100%;*/
+/*    height: 100%;*/
+/*    !*background-color: rgba(0, 0, 0, 0.4);*!*/
+/*    z-index: 999;*/
+/*    opacity: 0;*/
+/*    visibility: hidden;*/
+/*    transition: all 0.3s ease;*/
+/*    pointer-events: none; !* By default, allow clicking through overlay *!*/
+/*}*/
+
+/*.popup-overlay.active {*/
+/*    opacity: 1;*/
+/*    visibility: visible;*/
+/*    !*pointer-events: auto;*!*/
+/*}*/
+
+/*!* When popup is pinned, enable pointer events on overlay so clicks close it *!*/
+/*.project-popup.pinned + .popup-overlay {*/
+/*    pointer-events: auto;*/
+/*}*/
+
+/*.blinking-cursor {*/
+/*    font-weight: 100;*/
+/*    font-size: inherit;*/
+/*    color: inherit;*/
+/*    animation: blink 1s infinite;*/
+/*}*/
+
+/*@keyframes blink {*/
+/*    0% { opacity: 1; }*/
+/*    50% { opacity: 0; }*/
+/*    100% { opacity: 1; }*/
+/*}*/
+
+/*!* Mobile menu button *!*/
+/*.mobile-menu-button {*/
+/*    display: none;*/
+/*    position: fixed;*/
+/*    top: 20px;*/
+/*    left: 20px;*/
+/*    z-index: 999;*/
+/*    background: #f1f1f1;*/
+/*    border: none;*/
+/*    border-radius: 50%;*/
+/*    width: 48px;*/
+/*    height: 48px;*/
+/*    cursor: pointer;*/
+/*    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);*/
+/*}*/
+
+/*!* Mobile project overlay/popup *!*/
+/*.mobile-project-overlay {*/
+/*    display: none;*/
+/*    position: fixed;*/
+/*    top: 0;*/
+/*    left: 0;*/
+/*    width: 100%;*/
+/*    height: 100%;*/
+/*    background-color: rgba(255, 255, 255, 0.95);*/
+/*    z-index: 1000;*/
+/*    overflow-y: auto;*/
+/*    flex-direction: column;*/
+/*    padding: 60px 20px 20px 20px;*/
+/*}*/
+
+/*.close-overlay {*/
+/*    position: absolute;*/
+/*    top: 20px;*/
+/*    right: 20px;*/
+/*    background: #000;*/
+/*    color: white;*/
+/*    border: none;*/
+/*    border-radius: 50%;*/
+/*    width: 40px;*/
+/*    height: 40px;*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    justify-content: center;*/
+/*    font-size: 20px;*/
+/*    cursor: pointer;*/
+/*}*/
+
+/*.mobile-project-list {*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    gap: 12px;*/
+/*    width: 100%;*/
+/*    max-width: 400px;*/
+/*    margin: 0 auto;*/
+/*}*/
+
+/*!* Responsive styles *!*/
+/*@media (max-width: 1024px) {*/
+/*    .portfolio-container {*/
+/*        grid-template-columns: 250px 1fr;*/
+/*    }*/
+
+/*    .sidebar {*/
+/*        padding: 80px 10px 20px 20px; !* Reduced left padding *!*/
+/*        width: 250px; !* Fixed width *!*/
+/*    }*/
+
+/*    .project-list {*/
+/*        padding-left: 10px; !* Reduced padding *!*/
+/*    }*/
+
+/*    !* Adjust project items for smaller screens *!*/
+/*    .project-item {*/
+/*        padding: 10px 12px; !* Slightly reduced padding *!*/
+/*    }*/
+/*}*/

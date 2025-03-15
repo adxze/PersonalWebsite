@@ -1,0 +1,116 @@
+/*!* Mobile-specific changes for the portfolio *!*/
+
+/*@media (max-width: 768px) {*/
+/*    !* Grid adjustment *!*/
+/*    .portfolio-container {*/
+/*        grid-template-columns: 1fr;*/
+/*        grid-template-rows: auto 1fr;*/
+/*        overflow-y: auto;*/
+/*        height: auto;*/
+/*        min-height: 100vh;*/
+/*    }*/
+
+/*    !* Content area adjustments *!*/
+/*    .content-area {*/
+/*        padding: 40px 20px;*/
+/*        height: auto;*/
+/*        flex-direction: column;*/
+/*        align-items: center;*/
+/*    }*/
+
+/*    !* Name and job title centering *!*/
+/*    .name-title {*/
+/*        font-size: 32px;*/
+/*        text-align: center;*/
+/*        margin-bottom: 8px;*/
+/*    }*/
+
+/*    .job-title {*/
+/*        font-size: 18px;*/
+/*        text-align: center;*/
+/*        margin-bottom: 20px;*/
+/*    }*/
+
+/*    .nav-links {*/
+/*        justify-content: center;*/
+/*        margin-bottom: 40px;*/
+/*    }*/
+
+/*    !* Hide sidebar and show mobile project list *!*/
+/*    .sidebar {*/
+/*        display: none;*/
+/*    }*/
+
+/*    !* Hide mobile menu button *!*/
+/*    .mobile-menu-button {*/
+/*        display: none;*/
+/*    }*/
+
+/*    !* Hide original mobile overlay *!*/
+/*    .mobile-project-overlay {*/
+/*        display: none !important;*/
+/*    }*/
+
+/*    !* Mobile project list styling *!*/
+/*    .mobile-projects-section {*/
+/*        width: 100%;*/
+/*        margin-top: 30px;*/
+/*    }*/
+
+/*    .mobile-projects-title {*/
+/*        font-size: 20px;*/
+/*        font-weight: 600;*/
+/*        margin-bottom: 20px;*/
+/*        text-align: center;*/
+/*    }*/
+
+/*    .mobile-projects-grid {*/
+/*        display: grid;*/
+/*        grid-template-columns: 1fr 1fr;*/
+/*        gap: 12px;*/
+/*        width: 100%;*/
+/*        max-width: 500px;*/
+/*        margin: 0 auto;*/
+/*    }*/
+
+/*    .mobile-project-card {*/
+/*        background-color: #f5f5f7;*/
+/*        border-radius: 12px;*/
+/*        padding: 16px;*/
+/*        cursor: pointer;*/
+/*        transition: all 0.2s ease;*/
+/*        display: flex;*/
+/*        flex-direction: column;*/
+/*    }*/
+
+/*    .mobile-project-card:hover,*/
+/*    .mobile-project-card:active {*/
+/*        !*background-color: #e8e8e8;*!*/
+/*        transform: translateY(-2px);*/
+/*        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);*/
+/*    }*/
+
+/*    .mobile-project-name {*/
+/*        font-size: 16px;*/
+/*        font-weight: 500;*/
+/*        margin-bottom: 5px;*/
+/*    }*/
+
+/*    .mobile-project-year {*/
+/*        font-size: 14px;*/
+/*        opacity: 0.6;*/
+/*    }*/
+
+/*    !* Popup adjustments for mobile *!*/
+/*    .project-popup {*/
+/*        left: 50%; !* Center the popup on mobile *!*/
+/*        width: 90%;*/
+/*        height: 80vh;*/
+/*        max-width: none;*/
+/*    }*/
+
+/*    .popup-overlay.active {*/
+/*        background-color: rgba(0, 0, 0, 0.6); !* Darker overlay for mobile *!*/
+/*        pointer-events: auto;*/
+/*    }*/
+/*}*/

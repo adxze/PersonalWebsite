@@ -1,0 +1,422 @@
+/* Dynamic responsive CSS for portfolio */
+
+/* Base layout with fluid units */
+.portfolio-container {
+    display: grid;
+    grid-template-columns: minmax(20%, 320px) 1fr; /* Sidebar takes 20% of viewport but max 320px */
+    min-height: 100vh;
+    width: 100%;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+
+}
+
+body, html {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Fluid sidebar */
+.sidebar {
+    padding: 10vh 5% 5% 20%; /* Proportional padding */
+    overflow-y: auto;
+    height: 100vh;
+    width: 100%; /* Take full width of its grid area */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    /*background-color: yellowgreen;*/
+}
+
+.sidebar::-webkit-scrollbar {
+    display: none;
+}
+
+.project-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8em;
+    width: 100%;
+    /*background-color: #333333;*/
+}
+
+/* List item with proportional padding */
+.project-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8em 2em;
+    border-radius: 0.75em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    /*background-color: #888888;*/
+}
+
+.project-item:hover,
+.project-item.active {
+    background: rgba(0, 0, 0, 0.01);
+    box-shadow: 0 0.25em 0.625em rgba(0, 0, 0, 0.2);
+    transform: translateX(0.3em);
+}
+
+.project-name {
+    font-size: 1rem;
+    font-weight: 450;
+}
+
+.project-year {
+    font-size: 1rem;
+    opacity: 0.6;
+}
+
+/* Responsive content area */
+.content-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    padding: 5%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.about-content {
+    max-width: 90%;
+    width: 100%;
+}
+
+/* Fluid typography */
+.name-title {
+    font-size: clamp(1.75rem, 4vw, 2.625rem);
+    font-weight: 700;
+    text-align: left;
+    margin-bottom: 0.2em;
+}
+
+.job-title {
+    font-size: clamp(1.125rem, 2vw, 1.5rem);
+    text-align: left;
+    opacity: 1;
+    margin-bottom: 0.5em;
+    color: #666;
+}
+
+.nav-links {
+    display: flex;
+    text-align: left;
+    gap: 1.25em;
+    justify-content: left;
+    flex-wrap: wrap;
+}
+
+.nav-link {
+    text-decoration: none;
+    text-align: left;
+    color: inherit;
+    opacity: 0.7;
+    font-size: 1rem;
+    transition: opacity 0.3s;
+}
+
+.nav-link:first-child {
+    opacity: 1;
+}
+
+.nav-link:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+.nav-about {
+    text-decoration: none;
+    text-align: left;
+    /*color: inherit;*/
+    opacity: 1;
+    /*background: linear-gradient(to right, #ef5350, #f48fb1, #7e57c2, #2196f3, #26c6da, #43a047, #eeff41, #f9a825, #ff5722);*/
+    background: linear-gradient(to right,
+    #e05454,  /* softer red */
+    #ee5a8e,  /* softer pink */
+    #7653bd,  /* softer purple */
+    #2b82d6,  /* softer blue */
+    #26b5c2,  /* softer cyan */
+    #4a9e4b,  /* softer green */
+    #9acd32,  /* softer yellowgreen */
+    #f68c2a,  /* softer amber */
+    #e85c2a   /* softer orange */
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1rem;
+    transition: opacity 0.3s;
+}
+.nav-about:hover {
+    font-size: 1.2rem;
+}
+
+/* Responsive popup */
+.project-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.95);
+    width: 90%;
+    max-width: 50rem; /* 800px equivalent */
+    height: 80vh;
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 0 0.625em 2.5em rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    pointer-events: none;
+}
+
+.project-popup.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+    pointer-events: auto;
+}
+
+.project-popup-header {
+    padding: 1.25em 1.875em;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.project-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.close-popup {
+    border: none;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    /*color: red;*/
+}
+
+.close-popup:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.pin-indicator {
+    font-size: 0.875rem;
+    color: #888;
+    display: flex;
+    align-items: center;
+}
+
+.project-popup-content {
+    flex: 1;
+    padding: 1.875em;
+    overflow-y: auto;
+}
+
+.project-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #333;
+}
+
+.project-popup-footer {
+    padding: 0.9375em 1.875em;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.project-year-tag {
+    font-size: 0.875rem;
+    color: #666;
+}
+
+.project-links {
+    display: flex;
+    gap: 0.9375em;
+}
+
+.project-link {
+    padding: 0.375em 0.75em;
+    background-color: #f5f5f7;
+    border-radius: 0.375em;
+    text-decoration: none;
+    color: #333;
+    font-size: 0.875rem;
+    transition: background-color 0.2s;
+}
+
+.project-link:hover {
+    background-color: #e5e5e7;
+}
+
+/* Overlay */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.popup-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.project-popup.pinned + .popup-overlay {
+    pointer-events: auto;
+}
+
+/* Animation */
+.blinking-cursor {
+    font-weight: 100;
+    font-size: inherit;
+    color: inherit;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Mobile styles using proportional breakpoints */
+@media (max-width: 48em) { /* 768px equivalent */
+    .portfolio-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
+        /*background-color: azure;*/
+        overflow-y: auto;
+    }
+
+    .sidebar {
+        display: none;
+    }
+
+    .content-area {
+        padding: 2.5em 1.25em;
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .name-title,
+    .job-title {
+        text-align: center;
+    }
+
+    .nav-links {
+        justify-content: center;
+        margin-bottom: 2.5em;
+    }
+
+    /* Mobile projects section */
+    .mobile-projects-section {
+        width: 100%;
+        margin-top: 1.875em;
+    }
+
+    .mobile-projects-title {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-bottom: 1.25em;
+        text-align: center;
+    }
+
+    .mobile-projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 0.75em;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .mobile-project-card {
+        /*background-color: #f5f5f7;*/
+        background-color: rgba(255, 255, 255, 10); /* More transparent background */
+        /*border-radius: 10px;*/
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        /*border: 2px solid rgba(255, 255, 255, 0.5);*/
+        /*border-right: 1px solid rgba(255, 255, 255, 0.2);*/
+        /*border-bottom: 1px solid rgba(255, 255, 255, 0.2);*/
+        border-radius: 0.80em;
+        padding: 1.2em;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /*.mobile-project-card:hover,*/
+    .mobile-project-card:active {
+        background-color: #e8e8e8;
+        /*background-color: rgba(0, 0, 0, 0.1); !* More transparent background *!*/
+        transform: translateY(0.125em);
+        box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.1);
+    }
+
+    .mobile-project-name {
+        font-size: 1rem;
+        font-weight: 500;
+        margin-bottom: 0.3125em;
+    }
+
+    .mobile-project-year {
+        font-size: 0.875rem;
+        opacity: 0.6;
+    }
+}
+
+/* Small mobile adjustments */
+@media (max-width: 30em) { /* 480px equivalent */
+    .mobile-projects-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .project-popup {
+        width: 95%;
+        height: 85vh;
+    }
+}
+
+ /*Larger screens */
+@media (min-width: 90em) { /* 1440px equivalent */
+    .portfolio-container {
+        max-width: 120em; /* ~1920px */
+        margin: 0 auto;
+        /*color: red;*/
+    }
+
+    .about-content {
+        max-width: 40em; /* ~640px */
+    }
+}

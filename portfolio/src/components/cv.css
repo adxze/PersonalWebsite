@@ -1,0 +1,314 @@
+/* Import Dongle font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&display=swap');
+
+/* Basic settings */
+
+*{
+    /*font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;*/
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+html {
+    font-family: 'Dongle', sans-serif;
+    /*font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;*/
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    overflow: auto !important;
+    height: auto !important;
+}
+
+body {
+    font-family: 'Dongle', sans-serif;
+    /*font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;*/
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    position: relative;
+    overflow: auto !important;
+    height: auto !important;
+}
+
+/* Make gradient background fixed but allow scrolling */
+.gradient-bg {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(40deg, var(--color-bg1), var(--color-bg2));
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+/* CV Card Styles */
+.cv-container {
+    position: relative;
+    width: 85%;
+    max-width: 1100px;
+    margin: 150px auto 50px; /* Top margin to push content down */
+    display: flex;
+    z-index: 10;
+}
+
+.cv-card {
+    background-color: rgba(255, 255, 255, 0.2); /* More transparent background */
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 40px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.profile-section {
+    flex: 0 0 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.profile-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.profile-img {
+    width: 180px;
+    border-radius: 20%;
+    height: 180px;
+    object-fit: cover;
+    /*border: 5px solid white;*/
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.name {
+    font-size: 25px; /* Larger name */
+    font-weight: 700;
+    margin: 0;
+    line-height: 1;
+}
+
+.title {
+    font-size: 24px; /* Larger title */
+    color: #555;
+    margin: 8px 0 20px;
+}
+
+.contact-info {
+    width: 100%;
+    text-align: left;
+    margin-top: 20px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 22px; /* Larger contact text */
+}
+
+.contact-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+    opacity: 0.7;
+}
+
+.content-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.section {
+    margin-bottom: 30px;
+}
+
+.section-title {
+    font-size: 34px; /* Larger section titles */
+    font-weight: 700;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid rgba(135, 206, 250, 0.5);
+}
+
+.section-content-detail{
+    font-size: 22px; /* Larger content text */
+    line-height: 1;
+    margin-bottom: 10px;
+    color: #666;
+}
+
+.section-content {
+    font-size: 20px; /* Larger content text */
+    line-height: 1;
+
+}
+
+.skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skill-item {
+    /*background-color: rgba(255, 216, 255, 0.3);*/
+    /*background: white;*/
+    background-color: rgba(255, 255, 255, 0.2); /* More transparent background */
+    /*border-radius: 10px;*/
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 20px; /* Larger skill text */
+}
+
+.experience-item {
+    margin-bottom: 20px;
+}
+
+.experience-title {
+    font-size: 24px; /* Larger experience title */
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.experience-place, .experience-date {
+    font-size: 20px; /* Larger place and date */
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.experience-description {
+    font-size: 20px; /* Larger description */
+    margin-top: 10px;
+}
+
+/* back botoom */
+
+.back-button {
+    position: fixed;
+    top: 30px;
+    left: 30px;
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(8px);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    z-index: 100;
+    border: none;
+    cursor: pointer;
+}
+
+.back-button:hover {
+    background-color: rgba(255, 255, 255, 0.7);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.back-button:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.back-button svg {
+    width: 24px;
+    height: 24px;
+    stroke: #333;
+    transition: all 0.3s ease;
+}
+
+.back-button:hover svg {
+    stroke: rgba(135, 206, 250, 0.9);
+}
+
+.about-page-wrapper {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .cv-container {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        width: 90%;
+        margin: 100px auto 50px;
+        padding-bottom: 50px;
+    }
+
+    .cv-card {
+        flex-direction: column;
+        padding: 25px;
+    }
+
+    .profile-section {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .profile-img {
+        width: 150px;
+        height: 150px;
+    }
+
+    /* Create a mobile-only contact info section at the bottom */
+    .contact-info {
+        order: 2; /* Move it to the bottom in mobile */
+        width: 100%;
+        margin-top: 40px;
+        padding-top: 30px;
+        border-top: 1px solid rgba(135, 206, 250, 0.3);
+    }
+
+    /* Keep profile header at top */
+    .profile-header {
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    /* Make sure profile section is complete before moving to content */
+    .profile-section {
+        margin-bottom: 0;
+    }
+
+    /* Move content section to the middle */
+    .content-section {
+        order: 1;
+    }
+
+    .back-button {
+        top: 20px;
+        left: 20px;
+        width: 40px;
+        height: 40px;
+    }
+
+    .back-button svg {
+        width: 20px;
+        height: 20px;
+    }
+}
